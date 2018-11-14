@@ -38,14 +38,14 @@ public class RepositoresRecyclerAdapter extends RecyclerView.Adapter< Repositore
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final Repository r = repositoryList.get(i);
         viewHolder.repoName.setText( r.getName() );
-        viewHolder.repoLink.setText(Html.fromHtml( "<a href=\"+" +r.getUrl()+ "+\" >See Page</a>"));
+        viewHolder.repoLink.setText(Html.fromHtml( "<a href=\"+" +r.getHtmlUrl()+ "+\" >See Page</a>"));
 
         final Context context = viewHolder.repoLink.getContext();
 
         viewHolder.repoLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = r.getUrl();
+                String url = r.getHtmlUrl();
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 context.startActivity(i);
