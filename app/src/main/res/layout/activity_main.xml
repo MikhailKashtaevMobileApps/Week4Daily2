@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.page_user.UserActivity"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="UserName"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/createdOn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Created On:"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/lastModified"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Last Modofied"
+        android:textSize="20sp"/>
+
+    <Button
+        android:onClick="goRepositories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEE REPOSITORIES"/>
+
+</LinearLayout>
