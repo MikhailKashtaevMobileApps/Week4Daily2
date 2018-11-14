@@ -27,12 +27,12 @@ public class GithubDataSource {
     public static final String TAG = GithubDataSource.class.getSimpleName()+"__TAG__";
 
     public static Observable<User> getUser(String userName ){
-        return getService().getUser(userName, "81b11e8fd340f52801bce3bbbcb1f77e043aa8ed");
+        return getService().getUser(userName);
     }
 
     public static Observable<List<Repository>> getRepos(String userName ){
         System.out.println("__TAG__GithubDataSource.getRepos");
-        return getService().getRepos(userName, "81b11e8fd340f52801bce3bbbcb1f77e043aa8ed");
+        return getService().getRepos(userName);
     }
 
     private static GithubService getService(){
@@ -50,10 +50,10 @@ public class GithubDataSource {
     public interface GithubService {
 
         @GET("/users/{userName}")
-        Observable<User> getUser(@Path("userName") String userName, @Query("access_token") String accessToken);
+        Observable<User> getUser(@Path("userName") String userName);
 
         @GET("users/{userName}/repos")
-        Observable<List<Repository>> getRepos(@Path("userName") String userName, @Query("access_token") String accessToken);
+        Observable<List<Repository>> getRepos(@Path("userName") String userName);
     }
 
 
